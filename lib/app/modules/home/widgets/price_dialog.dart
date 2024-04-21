@@ -20,6 +20,7 @@ void priceDialog(BuildContext context, int i) async {
             ),
             TextField(
               controller: controller,
+              keyboardType: TextInputType.number,
             ),
             const SizedBox(
               height: 15,

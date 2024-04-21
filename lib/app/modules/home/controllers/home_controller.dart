@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'package:oodle_task/app/models/cart_model.dart';
@@ -58,7 +59,11 @@ class HomeController extends GetxController {
 
       final file = File(filename);
       await file.writeAsBytes(response.bodyBytes);
-    } catch (e) {}
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
   }
 
   void addToCart(int index, String price) {
